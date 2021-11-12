@@ -1,3 +1,7 @@
+## Team Members
+
+Alphabetically by last name: Miguel Fierro, Jordan Folk, Joseph Nguyen, Chloe Nott, K'lan Stovall
+
 ## Cooperation Plan
 
 - What are the key strengths of each person on the team?
