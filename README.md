@@ -107,12 +107,4 @@ Slack and remo
 - How will you communicate that it’s time to merge?
 - Let everyone know in slack or reemo before a merge.
 
-## Brainstorm
-
-- Cocktail recipe idea: backup
-- Gmail analytics: primary idea
-- Demographics survey
-- Directions to transit stations
-- Something to do with NASA satellite/asteroid tracking, weather, digital telescope, mars rover tracking
-- Store a collection of things that the user likes
-- ???
+## [Pitch Document](pitch.md)
