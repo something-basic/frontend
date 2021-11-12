@@ -1,70 +1,132 @@
-# Getting Started with Create React App.
+## Cooperation Plan
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- What are the key strengths of each person on the team?
+    - Chloe: Detail oriented, goal focused
+    - K’Lan: Back-end and front- end knowledge and debugging
+    - Joseph: Debugging and Back-end
+    - Jordan: Backend, briefing/presentation skills
+    - Miguel: time-management, front-end
 
-## Available Scripts.
+- How can you best utilize these strengths in the execution of your project?
+    - Use our strengths to complement each other’s weaknesses.
 
-In the project directory, you can run:
+- In which professional competencies do you each want to develop greater strength?
+    - Chloe: I would like to work on my collaboration competency.
+    - K’Lan: Analytical Thinking
+    - Joseph: Communication
+    - Jordan: Handling ambiguity 
+    - Miguel: problem solving
 
-### `npm start`
+- Knowing that every person in your team needs to understand all aspects of the project, how do you plan to approach the day-to-day work?
+    - Daily standup meeting in the morning to assign tasks (see Trello below).
+    - Communicate frequently.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Conflict Plan
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- What will be your group’s process to resolve conflict, when it arises?
+    - Escalate issues if can’t resolve amongst ourselves.
+    - Taking a break to let emotions subside
+    - Have a mediator
+    - Communication preferences for conflict resolution, voice is generally fine, slack is okay too.
 
-### `npm test`
+- What will your team do if one person is taking over the project and not letting the other members contribute?
+    - Escalate issues if can't resolve amongst ourselves
+    - How will you approach each other and the challenges of the project knowing that it is impossible for all members to be at the exact same place in understanding and skill level?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Working together to help each other. Pair programming, live view, remo, etc.
+    - How to avoid letting some people get crumbs: try to pair program, try to distribute load between members, make sure there’s at least two people for huge features
 
-### `npm run build`
+- How will you raise concerns to members who are not adequately contributing?
+    - Escalate issues if can't resolve amongst ourselves
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- How and when will you escalate the conflict if your resolution attempts are unsuccessful?
+    - Escalate as needed by the next day if resolution can’t be found.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Communication Plan
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- What hours will you be available to communicate?
+    - 9 am - 6 pm core hours. More is okay too.
 
-### `npm run eject`
+- What platforms will you use to communicate (ie. Slack, phone …)?
+Slack and remo
+    - How often will you take breaks?
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Ideally every hour. If anyone needs a break just take a break.
+    - What is your plan if you start to fall behind?
+    - Adjust plan so that an MVP product can be completed.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- How will you communicate after hours and on the weekend?
+    - Slack.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- What is your strategy for ensuring everyone’s voice is heard?
+    - Give everyone an equal chance to speak.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- How will you ensure that you are creating a safe environment where everyone feels comfortable speaking up?
+    - Any topic is okay to talk about.
 
-## Learn More
+## Work Plan
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- How will you identify tasks, assign tasks, know when they are complete, and manage work in general?
+    - Standups to identify and assign tasks.
+    - 9 am standup with Sara/Hexx.
+    - Trello will be used to manage the work and completed tasks.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- What project management tool will be used?
+    - Trello for project management.
 
-### Code Splitting
+## Git Process
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- What components of your project will live on GitHub?
+    - Front-end and Back-end
 
-### Analyzing the Bundle Size
+- How will you share the repository with your teammates?
+    - Everyone will be in an organization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- What is your Git flow?
+    - Every person has a branch for their task 
+    - Push to Staging Branch at the end of the day and compare before merge
 
-### Making a Progressive Web App
+- Will you be using a PR review workflow? If so, consider:
+    - How many people must review a PR?
+    - 2 to main.
+    - 1 to staging.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Who merges PRs?
+    - Any team member can merge, provided 1 or 2 other team members approve.
 
-### Advanced Configuration
+- How often will you merge?
+    - Every day at a minimum.
+    - After every feature completion ideally.
+    - At least every morning and evening, with flexibility for additional. Communicate with others if new pulls are needed.
+    - Git stash -> git pull -> Git stash pop
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- How will you communicate that it’s time to merge?
+- Let everyone know in slack or reemo before a merge.
 
-### Deployment
+## Brainstorm
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Cocktail recipe idea: backup
+- Gmail analytics: primary idea
+- Demographics survey
+- Directions to transit stations
+- Something to do with NASA satellite/asteroid tracking, weather, digital telescope, mars rover tracking
+- Store a collection of things that the user likes
+- ???
 
-### `npm run build` fails to minify
+## Project Pitch
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Summary of idea
+
+- An application that gives users insights into the analytics of their gmail emails. Visualizations on messages left unread and who the messages are from over time. 
+
+### What problem or pain point does it solve?
+
+- Intent is to see if there is progress in not leaving messages unread.
+
+### Minimum Viable Product (MVP) definition
+
+- User login
+- Chart that shows unread messages by day.
+- Chart that shows proportion of unread messages by day.
+- Chart that shows a breakdown of who the messages are from, past X days
+- Only if a database is needed: store preferences for what data to show (ie: show data for past X days, axis scaling, etc).
