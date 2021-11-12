@@ -1,5 +1,9 @@
 ## Project Pitch
 
+## Team Members
+
+Alphabetically by last name: Miguel Fierro, Jordan Folk, Joseph Nguyen, Chloe Nott, K'lan Stovall
+
 ## Brainstorm
 
 - Cocktail recipe idea: backup
