@@ -7,7 +7,7 @@ This is the frontend side for a project that shows analytics and visualizations 
 - [User stories](user-stories.md)
 - [Requirements](requirements.md)
 - [Wireframe](https://miro.com/app/board/o9J_ljX5Ing=/?invite_link_id=172364814419)
-- [Domain model](https://miro.com/app/board/o9J_ljWJXmc=/?invite_link_id=107448611039)
+- [Domain model and Schema](https://miro.com/app/board/o9J_ljWJXmc=/?invite_link_id=107448611039)
 
 ## Team Members
 
