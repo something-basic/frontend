@@ -2,6 +2,13 @@
 
 This is the frontend side for a project that shows analytics and visualizations for a user's gmail account.
 
+## Links
+
+- [User stories](user-stories.md)
+- [Requirements](requirements.md)
+- [Wireframe](https://miro.com/app/board/o9J_ljX5Ing=/?invite_link_id=172364814419)
+- [Domain model and Schema](https://miro.com/app/board/o9J_ljWJXmc=/?invite_link_id=107448611039)
+
 ## Team Members
 
 Alphabetically by last name: Miguel Fierro, Jordan Folk, Joseph Nguyen, Chloe Nott, K'lan Stovall
