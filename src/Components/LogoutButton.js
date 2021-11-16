@@ -12,6 +12,7 @@ export default class LoginButton extends Component {
           clientId={process.env.REACT_APP_AUTH_CLIENT_ID}
           buttonText="Logout"
           onLogoutSuccess={this.logout}
+          onFailure={this.logout}
         ></GoogleLogout>
       </div>
     );
