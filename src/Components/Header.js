@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, NavItem, Navbar } from 'react-bootstrap';
 import LoginButton from "./LoginButton.js";
 import LogoutButton from './LogoutButton.js';
-import Dashboard from './Dashboard'
+
 import { 
     Link
 } from 'react-router-dom';
