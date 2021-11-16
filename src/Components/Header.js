@@ -15,7 +15,7 @@ export default class Header extends Component {
                         <Nav.Link>About</Nav.Link>
                     </Nav>
                     <LoginButton /> 
-                    <LogoutButton /> 
+                    {/* <LogoutButton />  */}
                 </Container>
             </Navbar>
         )

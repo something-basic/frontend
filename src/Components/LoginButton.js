@@ -8,7 +8,8 @@ export default class LoginButton extends Component {
     render() {
         return (
             <div>
-                <GoogleLogin clientId={process.env.REACT_APP_AUTH_CLIENT_ID} buttonText="Login"
+                <GoogleLogin clientId="707464855273-6v3nkb519bofnhh0b4ivuareaa1o7vvt.apps.googleusercontent.com"
+                buttonText="Login"
                 onSuccess={this.responseGoogle}
                 onFailure={this.responseGoogle}
                 cookiePolicy={'single_host_origin'}
