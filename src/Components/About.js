@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button'
+import githublogo from './images/GitHub-Mark-Light-64px.png';
+
 
 
 // location to show basic information about each team member//
@@ -22,8 +23,8 @@ export default class About extends Component {
             TEXT ABOUT PERSON
           </Card.Text>
             {/* need to add links for each github page */}
-            <a href="https://github.com/folksmash" target="_blank"><img src="/public/images/Github-Mark-64px.png" /></a>
-            <a href="https://www.linkedin.com/in/jordan-folk-2a6062220/" target="_blank"><img src="" /></a>
+            <a href="https://github.com/folksmash" target="_blank">{githublogo}</a>
+            <a href="https://www.linkedin.com/in/jordan-folk-2a6062220/" target="_blank"><img src="./public/images/Github-Mark-64px.png" alt="Linkedin" /></a>
         </Card.Body>
       </Card>
         <Card>
@@ -33,7 +34,7 @@ export default class About extends Component {
         <Card.Text>
           TEXT ABOUT PERSON
         </Card.Text>
-            <a href="https://github.com/MFierro25" target="_blank"><img src="/public/images/Github-Mark-64px.png" /></a>
+            <a href="https://github.com/MFierro25" target="_blank"><img src='public/images/GitHub-Mark-64px.png' /></a>
             <a href="https://www.linkedin.com/in/mfierrro-1/" target="_blank"><img src="/public/images/Github-Mark-64px.png" /></a>
       </Card.Body>
         </Card>
@@ -44,7 +45,7 @@ export default class About extends Component {
       <Card.Text>
         TEXT ABOUT PERSON
       </Card.Text>
-            <a href="https://github.com/chloenott" target="_blank"><img src="/public/images/Github-Mark-64px.png" /></a>
+            <a href="https://github.com/chloenott" target="_blank"><img src="./public/images/GitHub-Mark-64px.png" /></a>
             <a href="http://www.linkedin.com/in/chloenott" target="_blank"><img src="" /></a>
     </Card.Body>
         </Card>

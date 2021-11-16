@@ -22,8 +22,9 @@ export default class Header extends Component {
                     <NavItem>
                         <Link to="/about">About</Link>
                     </NavItem>
-                    <LoginButton loggedIn={this.props.loggedIn} handleLogin={this.props.handleLogin} /> 
-                    <LogoutButton loggedIn={this.props.loggedIn} handleLogout={this.props.handleLogout}/> 
+                    {this.props.loggedIn ?
+                    <><p>{this.props.userName}</p><LogoutButton loggedIn={this.props.loggedIn} handleLogout={this.props.handleLogout}/>  </>:  <LoginButton loggedIn={this.props.loggedIn} handleLogin={this.props.handleLogin} />
+                    }
                </Container>
             </Navbar>
             

@@ -1,6 +1,5 @@
 import './App.css';
 import Header from './Components/Header.js';
-import Main from './Components/Main.js';
 import Footer from './Components/Footer.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react'
@@ -11,12 +10,14 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import Dashboard from './Components/Dashboard'
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      accessToken: ""
+      accessToken: "",
+      loggedIn: false
     };
   }
   handleLogin = async(res) => {
@@ -26,23 +27,21 @@ export default class App extends Component {
       accessToken: res.Zb.access_token,
       userName: res.it.Se
     })}
-    console.log(this.state.accessToken, this.state.userName)
   }
   handleLogout = async() => {
+    this.setState({
+      loggedIn: false
+    })
     let url = `https://accounts.google.com/o/oauth2/revoke?token=${this.state.accessToken}`
     let res = await axios.get(url)
-    if(res) {
-      this.setState=({loggedIn: false})
-    }
-    
   };
   render() {
     return (
       <Router>
-        <Header loggedIn={this.state.loggedIn} handleLogout={this.handleLogout} />
+        <Header userName={this.state.userName} loggedIn={this.state.loggedIn} handleLogin={this.handleLogin} handleLogout={this.handleLogout} />
         <Switch>
         <Route path="/dashboard" >
-            <Main />
+            <Dashboard accessToken={this.state.accessToken} />
           </Route>
           <Route path="/about" >
             <About />
