@@ -1,0 +1,10 @@
+.table {
+  margin-top: 20px;
+  float: right;
+  width: 50%;
+  border: none;
+}
+td {
+  font-size: larger;
+  border: none;
+}
