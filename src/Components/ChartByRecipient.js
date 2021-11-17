@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Line } from 'react-chartjs-2'
 
-export default class ChartByRecepient extends Component {
+export default class ChartByRecipient extends Component {
   constructor(props) {
     super(props);
     this.state = {
