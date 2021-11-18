@@ -3,7 +3,7 @@ import { Line } from "react-chartjs-2";
 import axios from "axios";
 import dayjs from "dayjs";
 
-export default class DailyChart extends Component {
+export default class UnsubscribeChart extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,15 +14,15 @@ export default class DailyChart extends Component {
   }
 
   componentDidMount() {
-    this.getHistory(this.state.binOption);
+    this.getUnsubscribe(this.state.binOption);
   }
-  getHistory = async (binOption) => {
+  getUnsubscribe = async (binOption) => {
     const jwt = this.props.accessToken;
     const config = {
       headers: { Authorization: `Bearer ${jwt}` },
       method: "get",
       baseURL: process.env.REACT_APP_SERVER_URL,
-      url: "/history",
+      url: "/unsub",
       params: {
         binOption: binOption,
       },
@@ -31,12 +31,12 @@ export default class DailyChart extends Component {
     this.setState({ data: data.data.reverse() });
   };
   handleChange = (e) => {
-    this.getHistory(e.target.value)
+    this.getUnsubscribe(e.target.value)
   };
 
   render() {
     return (
-      <div className="daily-chart" style={{ display: "block", width: "100%" }}>
+      <div className="daily-chart" style={{ display: "inline-block" }}>
         <select onChange={this.handleChange} id="binSelection" style={{float: "left", margin: "12px 0 0 0" }}>
           <option value="Last 7 days" selected>
             Last 7 days
@@ -53,9 +53,9 @@ export default class DailyChart extends Component {
 
             datasets: [
               {
-                label: "Unread Emails",
+                label: "Emails with Unsubscribe",
                 data: this.state.data.map((obj) => {
-                  return obj.unread;
+                  return obj.unsubscribe;
                 }),
                 backgroundColor: ["rgba(60, 60, 60, 30)"],
                 borderColor: ["rgb(180, 180, 180)"],

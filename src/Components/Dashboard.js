@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ChartByRecipient from "./ChartByRecipient";
+import UnsubscribeChart from "./UnsubscribeChart";
 import DailyChart from "./DailyChart";
 import TotalChart from "./TotalChart";
 import UnreadTable from "./UnreadTable";
@@ -49,7 +49,7 @@ export default class LoginButton extends Component {
             <Row m={1} lg={2}>
               <TotalChart accessToken={this.props.accessToken} />
 
-              <ChartByRecipient />
+              <UnsubscribeChart accessToken={this.props.accessToken}/>
             </Row>
           </Container>
         )}
