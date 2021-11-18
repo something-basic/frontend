@@ -72,7 +72,7 @@ export default class DailyChart extends Component {
               },
             ],
           }}
-          width={200}
+          width={400}
           height={100}
           options={{
             title: {
