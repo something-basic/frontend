@@ -48,7 +48,7 @@ export default class App extends Component {
         <Switch>
           <Container>
             <Route exact path="/">
-              <Home />
+              <Home accessToken={this.state.accessToken} handleLogin={this.handleLogin}/>
             </Route>
             <Route path="/dashboard">
               <Dashboard userName={this.state.userName} accessToken={this.state.accessToken}/>
