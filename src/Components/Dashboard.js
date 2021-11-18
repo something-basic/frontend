@@ -3,7 +3,6 @@ import ChartByRecipient from "./ChartByRecipient";
 import DailyChart from "./DailyChart";
 import TotalChart from "./TotalChart";
 import UnreadTable from "./UnreadTable";
-import axios from "axios";
 import { Container, Row } from "react-bootstrap";
 
 export default class LoginButton extends Component {
@@ -11,24 +10,6 @@ export default class LoginButton extends Component {
     super(props);
     this.state = {};
   }
-
-  // componentDidMount() {
-  //   this.getData();
-  // }
-  // getData = async () => {
-  //   const jwt = this.props.accessToken;
-  //   console.log(jwt);
-  //   const config = {
-  //     headers: { Authorization: `Bearer ${jwt}` },
-  //     method: "get",
-  //     baseURL: process.env.REACT_APP_SERVER_URL,
-  //     url: "/counts",
-  //   };
-  //   console.log(config);
-  //   const data = await axios(config);
-  //   console.log(data);
-  //   this.setState({ data: data });
-  // };
 
   render() {
     return (
