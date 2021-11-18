@@ -28,8 +28,8 @@ export default class TotalChart extends Component {
   };
 
   filterData = (value) => {
-    const filteredData = this.state.rawData.slice(-value)
-    this.setState({data: filteredData});
+    const filteredData = this.state.rawData
+    this.setState({data: filteredData.slice(-value)});
   };
 
   handleChange = (e) => {
