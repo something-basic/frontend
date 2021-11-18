@@ -12,24 +12,6 @@ code {
     monospace;
 }
 
-.main-chart {
-  width: 800px;
-}
 
-.recipient-chart {
-  width: 50%;
-  height: 150px;
-  float: right;
-  padding: 2%;
-  margin-right: auto;
-}
-
-.daily-chart {
-  width: 50%;
-  height: 150px;
-  float: left;
-  padding: 2%;
-  margin-left: auto;
-}
 
 

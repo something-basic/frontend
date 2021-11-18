@@ -13,16 +13,16 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      accessToken: "",
-      loggedIn: false,
+      loggedIn: false
     };
   }
   handleLogin = async (res) => {
+    console.log(res)
     if (res) {
       this.setState({
         loggedIn: true,
-        accessToken: res.Zb.access_token,
-        userName: res.it.Se,
+        accessToken: res.wc.access_token,
+        userName: res.vu.jf,
       });
     }
   };

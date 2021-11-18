@@ -26,6 +26,7 @@ export default class ChartByRecipient extends Component {
     return (
       <div>
         <div className="recipient-chart">
+          <h2>Emails by Recipient</h2>
           <Line
             data={this.state.charData}
             width={200}

@@ -1,7 +1,9 @@
-.logo {
-    width: 400px;
-    viewBox: 0 0 100 100;
+h1 {
+    padding-top: 125px;
 }
 p{
     font-size: x-large;
+} #main {
+    background-color: rgb(194, 194, 194);
+    height: 500px;
 }
