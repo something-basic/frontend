@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import axios from "axios";
 import dayjs from "dayjs";
+import Form from 'react-bootstrap/Form';
 
 export default class UnsubscribeChart extends Component {
   constructor(props) {
@@ -13,9 +14,6 @@ export default class UnsubscribeChart extends Component {
     };
   }
 
-  componentDidMount() {
-    this.getUnsubscribe(this.state.binOption);
-  }
   getUnsubscribe = async (binOption) => {
     const jwt = this.props.accessToken;
     const config = {
@@ -30,27 +28,32 @@ export default class UnsubscribeChart extends Component {
     const data = await axios(config);
     this.setState({ data: data.data.reverse() });
   };
+
   handleChange = (e) => {
     this.getUnsubscribe(e.target.value)
   };
 
+  componentDidMount() {
+    this.getUnsubscribe(this.state.binOption);
+  }
+
   render() {
     return (
-      <div className="daily-chart" style={{ display: "inline-block" }}>
-        <select onChange={this.handleChange} id="binSelection" style={{float: "left", margin: "12px 0 0 0" }}>
-          <option value="Last 7 days" selected>
-            Last 7 days
-          </option>
+      <div className="unsubscribe-chart">
+        <div style={{ display: "block", margin: "0 0 1em 0" }}>
+        <h4 style={{ display: "inline-block", margin: "0 0 0 0"}}>Unsubscribes</h4>
+        <Form.Select size="sm" style={{ display: "inline-block", width: "12em", float: "right"}}  onChange={(value) => this.handleChange(value)} id="binSelection">
+          <option value="Last 7 days" defaultValue>Last 7 days</option>
           <option value="Last 30 days">Last 30 days</option>
           <option value="Last 12 months">Last 12 months</option>
           <option value="Last 5 years">Last 5 years</option>
-        </select>
-        {this.state.data && <Line
+        </Form.Select>
+        </div>
+        {this.state.data && <Bar
           data={{
             labels: this.state.data.map((obj) => {
-              return dayjs(obj.date).format("YYYY MMM DD");
+              return dayjs(obj.date).format("MMM DD, YYYY");
             }),
-
             datasets: [
               {
                 label: "Emails with Unsubscribe",
@@ -73,7 +76,7 @@ export default class UnsubscribeChart extends Component {
             ],
           }}
           width={200}
-          height={100}
+          height={150}
           options={{
             title: {
               display: true,
@@ -84,9 +87,9 @@ export default class UnsubscribeChart extends Component {
               display: true,
               position: "bottom",
             },
-            elements: {
-              line: {
-                  tension: 0.25
+            scales: {
+              x: {
+                stacked: true
               }
             }
           }}

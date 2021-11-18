@@ -29,7 +29,7 @@ export default class Header extends Component {
         </Navbar.Collapse>
         {this.props.loggedIn ? (
             <>
-              <p style={{padding: '15px 10px 0 0'}}>{this.props.userName}</p>
+              <Button variant="light">{this.props.userName}</Button>
               <LogoutButton
                 loggedIn={this.props.loggedIn}
                 handleLogout={this.props.handleLogout}

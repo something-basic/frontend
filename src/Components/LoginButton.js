@@ -3,7 +3,6 @@ import { GoogleLogin } from "react-google-login";
 
 export default class LoginButton extends Component {
   responseGoogle = async (response) => {
-    console.log(response);
     this.props.handleLogin(response);
   };
   render() {
