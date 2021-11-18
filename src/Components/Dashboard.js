@@ -1,37 +1,39 @@
 import React, { Component } from "react";
-import ChartByRecipient from "./ChartByRecipient";
+import UnsubscribeChart from "./UnsubscribeChart";
 import DailyChart from "./DailyChart";
 import TotalChart from "./TotalChart";
-import UnreadTable from "./UnreadTable";
 import { Container, Row } from "react-bootstrap";
+import SendersChart from "./SendersChart";
+import HeaderSubtitle from "./HeaderSubtitle";
+import UnreadTable from "./UnreadTable";
+
 
 export default class LoginButton extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      currentStats: false
+    };
+  }
+
+  getCurrentStats = (currentStats) => {
+    this.setState({ currentStats: currentStats });
   }
 
   render() {
+    const spacing = "3em 0 3em 0";
     return (
       <>
         {this.props.accessToken && (
           <Container style={{ padding: "1% 0 0 0" }}>
-            <h3
-              style={{
-                padding: "20px",
-                display: "inline-block",
-                width: "fit-content",
-              }}
-            >
-              My DashBoard
-            </h3>
-            <UnreadTable />
-            <DailyChart accessToken={this.props.accessToken} />
-            <Row m={1} lg={2}>
-              <TotalChart accessToken={this.props.accessToken} />
-
-              <ChartByRecipient />
+            <h1 style={{ margin: "0 auto", display: "block", width: "fit-content" }}>{this.props.userName.split(' ')[0]}'s Inbox Dashboard</h1>
+            <HeaderSubtitle style={{ margin: spacing}} currentStats={this.state.currentStats} />
+            <DailyChart style={{ margin: spacing}}  accessToken={this.props.accessToken} />
+            <Row style={{ margin: spacing}}  m={1} lg={2}>
+              <TotalChart getCurrentStats={this.getCurrentStats} accessToken={this.props.accessToken} />
+              <UnsubscribeChart accessToken={this.props.accessToken} />
             </Row>
+            <SendersChart style={{ margin: spacing}}  accessToken={this.props.accessToken} />
           </Container>
         )}
       </>

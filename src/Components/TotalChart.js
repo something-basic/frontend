@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 import dayjs from "dayjs";
 import axios from "axios";
+import Form from 'react-bootstrap/Form';
 
 export default class TotalChart extends Component {
   constructor(props) {
@@ -10,10 +11,7 @@ export default class TotalChart extends Component {
       data: []
     };
   }
-  componentDidMount() {
-    this.getTotal();
-    
-  }
+
   getTotal = async () => {
     const jwt = this.props.accessToken;
     const config = {
@@ -22,41 +20,44 @@ export default class TotalChart extends Component {
       baseURL: process.env.REACT_APP_SERVER_URL,
       url: "/total",
     };
-    console.log(config);
     const data = await axios(config);
-    
-    this.setState({ rawData: data.data.sort((a,b) => {return b.date - a.date}) });
-    this.filterData(7)
-    console.log(this.state.rawData);
+    const sortedData = data.data.sort((a,b) => a.date - b.date );
+    this.setState({ rawData: sortedData });
+    this.filterData(10)
+    this.props.getCurrentStats(sortedData.slice(-2));
   };
-  handleChange = (e) =>{
-    this.filterData(e.target.value)
-  }
+
   filterData = (value) => {
-    let filteredData = []
-    for (let i = 0; i < value; i++) {
-      filteredData.push(this.state.rawData[i])
-    }
-    this.setState({data: filteredData.reverse()});
-  }
+    const filteredData = this.state.rawData.slice(-value)
+    this.setState({data: filteredData});
+  };
+
+  handleChange = (e) => {
+    this.filterData(e.target.value)
+  };
+
+  componentDidMount() {
+    this.getTotal();
+  };
+
   render() {
     return (
-      <div className="main-chart">
-        <h2 style={{display: "inline-block"}}>Unread vs. Total Unread</h2>
-               <select onChange={this.handleChange} id="binSelection" style={{float: "right", margin: "12px 0 0 0" }}>
-          <option value="7" selected>
-            Last 7 Requests
-          </option>
-          <option value="30">Last 30 Requests</option>
-          <option value="60">Last 60 Requests</option>
-        </select> 
+      <div className="total-chart">
+        <div style={{ display: "block", margin: "0 0 1em 0" }}>
+          <h4 style={{ display: "inline-block", margin: "0 0 0 0"}}>Logged History</h4>
+          <Form.Select size="sm" style={{ display: "inline-block", width: "12em", float: "right"}} onChange={(value) => this.handleChange(value)} id="binSelection">
+            <option value="10" defaultValue>Last 10 Requests</option>
+            <option value="50">Last 50 Requests</option>
+            <option value="20">Last 200 Requests</option>
+            <option value="1000">Last 1000 Requests</option>
+          </Form.Select>
+        </div>
         {this.state.data && (
           <Line 
             data={{
               labels: this.state.data.map((obj) => {
-                return dayjs(obj.date).format("YYYY MMM DD");
+                return dayjs(obj.date).format("MMM DD, YYYY");
               }),
-
               datasets: [
                 {
                   label: "Unread Emails",
@@ -78,9 +79,8 @@ export default class TotalChart extends Component {
                 },
               ],
             }}
-            
             width={200}
-            height={100}
+            height={150}
             options={{
               title: {
                 display: true,
@@ -93,9 +93,10 @@ export default class TotalChart extends Component {
               },
               elements: {
                 line: {
-                    tension: 0.25
+                    tension: 0
                 }
-            }}}
+              }
+            }}
           />
         )}
       </div>

@@ -8,6 +8,7 @@ import About from "./Components/About";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from "./Components/Dashboard";
 import Home from "./Components/Home";
+import { Container } from "react-bootstrap";
 
 export default class App extends Component {
   constructor(props) {
@@ -16,8 +17,8 @@ export default class App extends Component {
       loggedIn: false
     };
   }
+
   handleLogin = async (res) => {
-    console.log(res)
     if (res) {
       this.setState({
         loggedIn: true,
@@ -26,13 +27,15 @@ export default class App extends Component {
       });
     }
   };
+
   handleLogout = async () => {
     this.setState({
-      loggedIn: false,
+      loggedIn: false
     });
     let url = `https://accounts.google.com/o/oauth2/revoke?token=${this.state.accessToken}`;
     await axios.get(url);
   };
+
   render() {
     return (
       <Router>
@@ -43,15 +46,17 @@ export default class App extends Component {
           handleLogout={this.handleLogout}
         />
         <Switch>
-          <Route exact path="/">
-            <Home accessToken={this.state.accessToken} handleLogin={this.handleLogin}/>
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard accessToken={this.state.accessToken} />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
+          <Container>
+            <Route exact path="/">
+              <Home accessToken={this.state.accessToken} handleLogin={this.handleLogin}/>
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard userName={this.state.userName} accessToken={this.state.accessToken}/>
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+          </Container>
         </Switch>
         <Footer />
       </Router>
