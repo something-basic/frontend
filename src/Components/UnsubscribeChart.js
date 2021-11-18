@@ -4,7 +4,7 @@ import axios from "axios";
 import dayjs from "dayjs";
 import Form from 'react-bootstrap/Form';
 
-export default class DailyChart extends Component {
+export default class UnsubscribeChart extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,13 +14,13 @@ export default class DailyChart extends Component {
     };
   }
 
-  getHistory = async (binOption) => {
+  getUnsubscribe = async (binOption) => {
     const jwt = this.props.accessToken;
     const config = {
       headers: { Authorization: `Bearer ${jwt}` },
       method: "get",
       baseURL: process.env.REACT_APP_SERVER_URL,
-      url: "/history",
+      url: "/unsub",
       params: {
         binOption: binOption,
       },
@@ -30,36 +30,35 @@ export default class DailyChart extends Component {
   };
 
   handleChange = (e) => {
-    this.getHistory(e.target.value)
+    this.getUnsubscribe(e.target.value)
   };
 
   componentDidMount() {
-    this.getHistory(this.state.binOption);
+    this.getUnsubscribe(this.state.binOption);
   }
 
   render() {
     return (
-      <div className="daily-chart" style={{ display: "block", margin: "0 0 0 0", width: "100%" }}>
+      <div className="unsubscribe-chart">
         <div style={{ display: "block", margin: "0 0 1em 0" }}>
-          <h4 style={{ display: "inline-block", margin: "0 0 0 0"}}>Current Distribution</h4>
-          <Form.Select size="sm" style={{ display: "inline-block", width: "12em", float: "right"}}  onChange={(value) => this.handleChange(value)} id="binSelection">
-            <option value="Last 7 days" defaultValue>Last 7 days</option>
-            <option value="Last 30 days">Last 30 days</option>
-            <option value="Last 12 months">Last 12 months</option>
-            <option value="Last 5 years">Last 5 years</option>
-          </Form.Select>
+        <h4 style={{ display: "inline-block", margin: "0 0 0 0"}}>Unsubscribes</h4>
+        <Form.Select size="sm" style={{ display: "inline-block", width: "12em", float: "right"}}  onChange={(value) => this.handleChange(value)} id="binSelection">
+          <option value="Last 7 days" defaultValue>Last 7 days</option>
+          <option value="Last 30 days">Last 30 days</option>
+          <option value="Last 12 months">Last 12 months</option>
+          <option value="Last 5 years">Last 5 years</option>
+        </Form.Select>
         </div>
         {this.state.data && <Bar
           data={{
             labels: this.state.data.map((obj) => {
               return dayjs(obj.date).format("MMM DD, YYYY");
             }),
-
             datasets: [
               {
-                label: "Unread Emails",
+                label: "Emails with Unsubscribe",
                 data: this.state.data.map((obj) => {
-                  return obj.unread;
+                  return obj.unsubscribe;
                 }),
                 backgroundColor: ["rgba(60, 60, 60, 30)"],
                 borderColor: ["rgb(180, 180, 180)"],
@@ -76,6 +75,8 @@ export default class DailyChart extends Component {
               },
             ],
           }}
+          width={200}
+          height={150}
           options={{
             title: {
               display: true,

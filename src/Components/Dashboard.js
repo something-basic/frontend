@@ -1,52 +1,42 @@
 import React, { Component } from "react";
-import ChartByRecipient from "./ChartByRecipient";
+import UnsubscribeChart from "./UnsubscribeChart";
 import DailyChart from "./DailyChart";
 import TotalChart from "./TotalChart";
-import UnreadTable from "./UnreadTable";
-import axios from "axios";
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
+import SendersChart from "./SendersChart";
+import HeaderSubtitle from "./HeaderSubtitle";
+
+
 
 export default class LoginButton extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      currentStats: false
+    };
   }
 
-  componentDidMount() {
-    this.getData();
+  getCurrentStats = (currentStats) => {
+    this.setState({ currentStats: currentStats });
   }
-  getData = async () => {
-    const jwt = this.props.accessToken;
-    console.log(jwt);
-    const config = {
-      headers: { Authorization: `Bearer ${jwt}` },
-      method: "get",
-      baseURL: process.env.REACT_APP_SERVER_URL,
-      url: "/counts",
-    };
-    console.log(config);
-    const data = await axios(config);
-    console.log(data);
-    this.setState({ data: data });
-  };
 
   render() {
+    const spacing = "3em 0 3em 0";
     return (
-      <Container style={{ padding: "5% 0 0 0" }}>
-        <h3
-          style={{
-            padding: "20px",
-            display: "inline-block",
-            width: "fit-content",
-          }}
-        >
-          My DashBoard
-        </h3>
-        <UnreadTable />
-        <TotalChart />
-        <DailyChart />
-        <ChartByRecipient />
-      </Container>
+      <>
+        {this.props.accessToken && (
+          <Container style={{ padding: "1% 0 0 0" }}>
+            <h1 style={{ margin: "0 auto", display: "block", width: "fit-content" }}>{this.props.userName.split(' ')[0]}'s Inbox Dashboard</h1>
+            <HeaderSubtitle style={{ margin: spacing}} currentStats={this.state.currentStats} />
+            <DailyChart style={{ margin: spacing}}  accessToken={this.props.accessToken} />
+            <Row style={{ margin: spacing}}  m={1} lg={2}>
+              <TotalChart getCurrentStats={this.getCurrentStats} accessToken={this.props.accessToken} />
+              <UnsubscribeChart accessToken={this.props.accessToken} />
+            </Row>
+            <SendersChart style={{ margin: spacing}}  accessToken={this.props.accessToken} />
+          </Container>
+        )}
+      </>
     );
   }
 }
