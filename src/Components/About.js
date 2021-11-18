@@ -6,6 +6,8 @@ import Card from "react-bootstrap/Card";
 import githublogo from "../images/GitHub-Mark-32px.png";
 import linkedin from "../images/LI-In-Bug.png";
 import { Container } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHtml5, faJsSquare, faReact } from '@fortawesome/free-brands-svg-icons';
 
 // location to show basic information about each team member//
 
@@ -32,7 +34,11 @@ export default class About extends Component {
               {/* possibly add photos or other info per card  */}
               {/* need 'about' Button on home page and dashboard */}
               {/* need to figure out styling for cards */}
-              <Card.Header>Test</Card.Header>
+              <Card.Header>
+                <FontAwesomeIcon icon={faReact}></FontAwesomeIcon>&ensp;
+                <FontAwesomeIcon icon={faJsSquare}></FontAwesomeIcon>&ensp;
+                <FontAwesomeIcon icon={faHtml5}></FontAwesomeIcon>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>Jordan Folk</Card.Title>
                 <Card.Text>TEXT ABOUT PERSON</Card.Text>
@@ -41,9 +47,9 @@ export default class About extends Component {
                   href="https://github.com/folksmash"
                   target="_blank"
                   rel="noreferrer"
-                >
+                > 
                   <img src={githublogo} alt="GitHub" />
-                </a>
+                </a>&ensp;
                 <a
                   href="https://www.linkedin.com/in/jordan-folk-2a6062220/"
                   target="_blank"
@@ -54,17 +60,23 @@ export default class About extends Component {
               </Card.Body>
             </Card>
             <Card border="secondary" className="cardframe">
-              <Card.Header>Test</Card.Header>
+              <Card.Header>
+                <FontAwesomeIcon icon={faReact}></FontAwesomeIcon>&ensp;
+                <FontAwesomeIcon icon={faJsSquare}></FontAwesomeIcon>&ensp;
+                <FontAwesomeIcon icon={faHtml5}></FontAwesomeIcon>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>Miguel Fierro</Card.Title>
-                <Card.Text>TEXT ABOUT PERSON</Card.Text>
+                <Card.Text>Software  developer that enjoys the process of creating things, the endless possibilities of technology 
+and solving everyday obstacles.
+</Card.Text>
                 <a
                   href="https://github.com/MFierro25"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <img src={githublogo} alt="GitHub" />
-                </a>
+                </a>&ensp;
                 <a
                   href="https://www.linkedin.com/in/mfierrro-1/"
                   target="_blank"
@@ -75,7 +87,11 @@ export default class About extends Component {
               </Card.Body>
             </Card>
             <Card border="secondary" className="cardframe">
-              <Card.Header>Test</Card.Header>
+              <Card.Header>
+                <FontAwesomeIcon icon={faReact}></FontAwesomeIcon>&ensp;
+                <FontAwesomeIcon icon={faJsSquare}></FontAwesomeIcon>&ensp;
+                <FontAwesomeIcon icon={faHtml5}></FontAwesomeIcon>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>Chloe Nott</Card.Title>
                 <Card.Text>TEXT ABOUT PERSON</Card.Text>
@@ -85,7 +101,7 @@ export default class About extends Component {
                   rel="noreferrer"
                 >
                   <img src={githublogo} alt="GitHub" />
-                </a>
+                </a>&ensp;
                 <a
                   href="http://www.linkedin.com/in/chloenott"
                   target="_blank"
@@ -97,17 +113,16 @@ export default class About extends Component {
             </Card>
 
             <Card border="secondary" className="cardframe">
-              <Card.Header>Test</Card.Header>
+              <Card.Header>
+                <FontAwesomeIcon icon={faReact}></FontAwesomeIcon>&ensp;
+                <FontAwesomeIcon icon={faJsSquare}></FontAwesomeIcon>&ensp;
+                <FontAwesomeIcon icon={faHtml5}></FontAwesomeIcon>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>K'Lan Stovall</Card.Title>
                 <Card.Text>
                   TEXT ABOUT PERSONTEXT ABOUT PERSONTEXT ABOUT PERSONTEXT ABOUT
-                  PERSONTEXT ABOUT PERSONTEXT ABOUT PERSONTEXT ABOUT PERSONTEXT
-                  ABOUT PERSONTEXT ABOUT PERSONTEXT ABOUT PERSONTEXT ABOUT
-                  PERSONTEXT ABOUT PERSONTEXT ABOUT PERSONTEXT ABOUT PERSONTEXT
-                  ABOUT PERSONTEXT ABOUT PERSONTEXT ABOUT PERSONTEXT ABOUT
-                  PERSONTEXT ABOUT PERSONTEXT ABOUT PERSONTEXT ABOUT PERSONTEXT
-                  ABOUT PERSONT
+                  PERSONTEXT 
                 </Card.Text>
                 <a
                   href="https://github.com/KSTOV"
@@ -115,7 +130,7 @@ export default class About extends Component {
                   rel="noreferrer"
                 >
                   <img src={githublogo} alt="GitHub" />
-                </a>
+                </a>&ensp;
                 <a
                   href="https://www.linkedin.com/in/klanstovall/"
                   target="_blank"
@@ -127,7 +142,11 @@ export default class About extends Component {
             </Card>
 
             <Card border="secondary" className="cardframe">
-              <Card.Header>Test</Card.Header>
+              <Card.Header>
+                <FontAwesomeIcon icon={faReact}></FontAwesomeIcon>&ensp;
+                <FontAwesomeIcon icon={faJsSquare}></FontAwesomeIcon>&ensp;
+                <FontAwesomeIcon icon={faHtml5}></FontAwesomeIcon>
+              </Card.Header>
               <Card.Body>
                 <Card.Title>Joseph Nguyen</Card.Title>
                 <Card.Text>TEXT ABOUT PERSON</Card.Text>
@@ -137,7 +156,7 @@ export default class About extends Component {
                   rel="noreferrer"
                 >
                   <img src={githublogo} alt="GitHub" />
-                </a>
+                </a>&ensp;
                 <a
                   href="https://www.linkedin.com/in/josephthuan-nguyen/"
                   target="_blank"
