@@ -4,7 +4,7 @@ import LoginButton from "./LoginButton.js";
 import LogoutButton from "./LogoutButton.js";
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import Logo from '../images/logo.svg'
+import Logo from '../images/MainLogo.png'
 import {Link} from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,7 +16,7 @@ export default class Header extends Component {
     return (
     <Navbar bg="light" expand="lg">
     <Container>
-        <Navbar.Brand><img className="logo" src={Logo} alt="" style={{width: "100px"}}></img></Navbar.Brand>
+        <Navbar.Brand><img className="logo" src={Logo} alt="" style={{width: "150px"}}></img></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">

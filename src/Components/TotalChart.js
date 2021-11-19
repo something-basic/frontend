@@ -48,7 +48,7 @@ export default class TotalChart extends Component {
           <Form.Select size="sm" style={{ display: "inline-block", width: "12em", float: "right"}} onChange={(value) => this.handleChange(value)} id="binSelection">
             <option value="10" defaultValue>Last 10 Requests</option>
             <option value="50">Last 50 Requests</option>
-            <option value="20">Last 200 Requests</option>
+            <option value="200">Last 200 Requests</option>
             <option value="1000">Last 1000 Requests</option>
           </Form.Select>
         </div>
@@ -64,8 +64,8 @@ export default class TotalChart extends Component {
                   data: this.state.data.map((obj) => {
                     return obj.unread;
                   }),
-                  backgroundColor: ["rgba(60, 60, 60, 30)"],
-                  borderColor: ["rgb(180, 180, 180)"],
+                  backgroundColor: ['#34adfe'],
+                  pointBackgroundColor: ['#ffea00'],
                   fill: "origin",
                 },
                 {
@@ -73,8 +73,8 @@ export default class TotalChart extends Component {
                   data: this.state.data.map((obj) => {
                     return obj.total;
                   }),
-                  backgroundColor: ["rgb(100, 100, 100)"],
-                  borderColor: ["rgb(0, 0, 0)"],
+                  backgroundColor: ["#93d8ff"],
+                  pointBackgroundColor: ['#ffea00'],
                   fill: "origin",
                 },
               ],
@@ -92,6 +92,9 @@ export default class TotalChart extends Component {
                 position: "bottom",
               },
               elements: {
+                point: {
+                    radius: 0
+                },
                 line: {
                     tension: 0
                 }

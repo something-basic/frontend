@@ -22,10 +22,6 @@ export default class SendersChart extends Component {
     this.setState({ data: data.data.slice(0, 40) });
   };
 
-  handleChange = (e) => {
-    this.getSenders(e.target.value)
-  };
-
   componentDidMount() {
     this.getSenders();
   }
@@ -46,8 +42,9 @@ export default class SendersChart extends Component {
                 data: this.state.data.map((obj) => {
                   return obj.count;
                 }),
-                backgroundColor: ["rgba(60, 60, 60, 30)"],
+                backgroundColor: ["#34adfe"],
                 borderColor: ["rgb(180, 180, 180)"],
+                hoverBackgroundColor:["#ffea00"]
               },
             ],
           }}
