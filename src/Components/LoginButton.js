@@ -8,7 +8,7 @@ export default class LoginButton extends Component {
   render() {
     return (
       <GoogleLogin
-        clientId={`${process.env.REACT_APP_AUTH_DOMAIN}`}
+        clientId="707464855273-6v3nkb519bofnhh0b4ivuareaa1o7vvt.apps.googleusercontent.com"
         buttonText="Login"
         scope={"https://www.googleapis.com/auth/gmail.readonly"}
         onSuccess={this.responseGoogle}
