@@ -19,7 +19,7 @@ export default class Home extends Component {
           <h1>MailPal</h1>
           <p>Providing analytical insights into your email habits</p>
           <GoogleLogin
-            clientId="707464855273-6v3nkb519bofnhh0b4ivuareaa1o7vvt.apps.googleusercontent.com"
+            clientId={`${process.env.REACT_APP_AUTH_DOMAIN}`}
             render={(renderProps) => (
               <Button variant="dark" onClick={renderProps.onClick}
               disabled={renderProps.disabled}>Get Started</Button>

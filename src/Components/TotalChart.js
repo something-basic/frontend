@@ -48,7 +48,7 @@ export default class TotalChart extends Component {
           <Form.Select size="sm" style={{ display: "inline-block", width: "12em", float: "right"}} onChange={(value) => this.handleChange(value)} id="binSelection">
             <option value="10" defaultValue>Last 10 Requests</option>
             <option value="50">Last 50 Requests</option>
-            <option value="20">Last 200 Requests</option>
+            <option value="200">Last 200 Requests</option>
             <option value="1000">Last 1000 Requests</option>
           </Form.Select>
         </div>
