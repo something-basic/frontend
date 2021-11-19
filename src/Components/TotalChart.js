@@ -64,8 +64,8 @@ export default class TotalChart extends Component {
                   data: this.state.data.map((obj) => {
                     return obj.unread;
                   }),
-                  backgroundColor: ["rgba(60, 60, 60, 30)"],
-                  borderColor: ["rgb(180, 180, 180)"],
+                  backgroundColor: ['#34adfe'],
+                  pointBackgroundColor: ['#ffea00'],
                   fill: "origin",
                 },
                 {
@@ -73,8 +73,8 @@ export default class TotalChart extends Component {
                   data: this.state.data.map((obj) => {
                     return obj.total;
                   }),
-                  backgroundColor: ["rgb(100, 100, 100)"],
-                  borderColor: ["rgb(0, 0, 0)"],
+                  backgroundColor: ["#93d8ff"],
+                  pointBackgroundColor: ['#ffea00'],
                   fill: "origin",
                 },
               ],
@@ -92,6 +92,9 @@ export default class TotalChart extends Component {
                 position: "bottom",
               },
               elements: {
+                point: {
+                    radius: 0
+                },
                 line: {
                     tension: 0
                 }

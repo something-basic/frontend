@@ -28,8 +28,8 @@ export default class LoginButton extends Component {
           <Container style={{ padding: "1% 0 0 0" }}>
             <h1 style={{ margin: "0 auto", display: "block", width: "fit-content" }}>{this.props.userName.split(' ')[0]}'s Inbox Dashboard</h1>
             <HeaderSubtitle style={{ margin: spacing}} currentStats={this.state.currentStats} />
-            <DailyChart style={{ margin: spacing}}  accessToken={this.props.accessToken} />
-            <Row style={{ margin: spacing}}  m={1} lg={2}>
+            <DailyChart style={{ margin: "spacing" }}  accessToken={this.props.accessToken} />
+            <Row style={{ margin: "4em 0 3em 0"}}  m={1} lg={2}>
               <TotalChart getCurrentStats={this.getCurrentStats} accessToken={this.props.accessToken} />
               <UnsubscribeChart accessToken={this.props.accessToken} />
             </Row>

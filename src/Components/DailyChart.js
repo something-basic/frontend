@@ -39,8 +39,8 @@ export default class DailyChart extends Component {
 
   render() {
     return (
-      <div className="daily-chart" style={{ display: "block", margin: "0 0 0 0", width: "100%" }}>
-        <div style={{ display: "block", margin: "0 0 1em 0" }}>
+      <div className="daily-chart" style={{ display: "block", margin: "0 0 0 0", width: "100%", boxShadow: "0em 0.5em 50px #C4DFF5", padding: "3em" }}>
+        <div style={{ display: "block", margin: "0 0 2em 0" }}>
           <h4 style={{ display: "inline-block", margin: "0 0 0 0"}}>Current Distribution</h4>
           <Form.Select size="sm" style={{ display: "inline-block", width: "12em", float: "right"}}  onChange={(value) => this.handleChange(value)} id="binSelection">
             <option value="Last 7 days" defaultValue>Last 7 days</option>
@@ -61,8 +61,8 @@ export default class DailyChart extends Component {
                 data: this.state.data.map((obj) => {
                   return obj.unread;
                 }),
-                backgroundColor: ["rgba(60, 60, 60, 30)"],
-                borderColor: ["rgb(180, 180, 180)"],
+                backgroundColor: ["#34adfe"],
+                hoverBackgroundColor:["#ffea00"],
                 fill: "origin",
               },
               {
@@ -70,8 +70,8 @@ export default class DailyChart extends Component {
                 data: this.state.data.map((obj) => {
                   return obj.total;
                 }),
-                backgroundColor: ["rgb(100, 100, 100)"],
-                borderColor: ["rgb(0, 0, 0)"],
+                backgroundColor: ["#93d8ff"],
+                hoverBackgroundColor:["#ffea00"],
                 fill: "origin",
               },
             ],
