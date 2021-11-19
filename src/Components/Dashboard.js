@@ -8,7 +8,7 @@ import HeaderSubtitle from "./HeaderSubtitle";
 
 
 
-export default class LoginButton extends Component {
+export default class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
