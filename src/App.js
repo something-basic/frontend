@@ -19,6 +19,7 @@ export default class App extends Component {
   }
 
   handleLogin = async (res) => {
+    console.log(res)
     if (res) {
       this.setState({
         loggedIn: true,
