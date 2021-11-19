@@ -41,7 +41,7 @@ export default class About extends Component {
               </Card.Header>
               <Card.Body>
                 <Card.Title>Jordan Folk</Card.Title>
-                <Card.Text>TEXT ABOUT PERSON</Card.Text>
+                <Card.Text>Currently attending Code Fellows to pursue a future working with Python and making the tools of tomorrow.</Card.Text>
                 {/* need to add links for each github page */}
                 <a
                   href="https://github.com/folksmash"
@@ -94,7 +94,7 @@ and solving everyday obstacles.
               </Card.Header>
               <Card.Body>
                 <Card.Title>Chloe Nott</Card.Title>
-                <Card.Text>TEXT ABOUT PERSON</Card.Text>
+                <Card.Text>Career changing student at Code Fellows. Background in manufacturing engineering. Enjoys utilization of data to communicate and base decisions.</Card.Text>
                 <a
                   href="https://github.com/chloenott"
                   target="_blank"
@@ -121,8 +121,7 @@ and solving everyday obstacles.
               <Card.Body>
                 <Card.Title>K'Lan Stovall</Card.Title>
                 <Card.Text>
-                  TEXT ABOUT PERSONTEXT ABOUT PERSONTEXT ABOUT PERSONTEXT ABOUT
-                  PERSONTEXT 
+                  Software Developer fascinated with the relationship between technology and creativity.
                 </Card.Text>
                 <a
                   href="https://github.com/KSTOV"
@@ -149,7 +148,7 @@ and solving everyday obstacles.
               </Card.Header>
               <Card.Body>
                 <Card.Title>Joseph Nguyen</Card.Title>
-                <Card.Text>TEXT ABOUT PERSON</Card.Text>
+                <Card.Text>Software development student with a passion for solving problems with technology</Card.Text>
                 <a
                   href="https://github.com/3lueHippo"
                   target="_blank"

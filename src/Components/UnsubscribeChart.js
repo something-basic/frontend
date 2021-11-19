@@ -60,8 +60,8 @@ export default class UnsubscribeChart extends Component {
                 data: this.state.data.map((obj) => {
                   return obj.unsubscribe;
                 }),
-                backgroundColor: ["rgba(60, 60, 60, 30)"],
-                borderColor: ["rgb(180, 180, 180)"],
+                backgroundColor: ['#34adfe'],
+                hoverBackgroundColor:["#ffea00"],
                 fill: "origin",
               },
               {
@@ -69,8 +69,8 @@ export default class UnsubscribeChart extends Component {
                 data: this.state.data.map((obj) => {
                   return obj.total;
                 }),
-                backgroundColor: ["rgb(100, 100, 100)"],
-                borderColor: ["rgb(0, 0, 0)"],
+                backgroundColor: ["#93d8ff"],
+                hoverBackgroundColor:["#ffea00"],
                 fill: "origin",
               },
             ],
