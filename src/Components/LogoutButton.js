@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { GoogleLogout } from "react-google-login";
 
-export default class LogoutButton extends Component {
+export default class LoginButton extends Component {
   render() {
     return (
       <GoogleLogout
