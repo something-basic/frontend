@@ -25,6 +25,7 @@ export default class Home extends Component {
               disabled={renderProps.disabled}>Get Started</Button>
             )}
             buttonText="Login"
+            scope={"https://www.googleapis.com/auth/gmail.readonly"}
             onSuccess={this.responseGoogle}
             onFailure={this.responseGoogle}
             cookiePolicy={"single_host_origin"}
