@@ -52,6 +52,12 @@ export default class SendersChart extends Component {
           height={200}
           options={{
             indexAxis: 'y',
+            plugins: {
+              subtitle: {
+                display: true,
+                text: "Chart contains data from the most recent 250 emails received and excludes emails with the word \"unsubscribe\""
+              }
+            },
           }}
         />}
       </div>

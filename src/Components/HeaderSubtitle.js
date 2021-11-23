@@ -4,17 +4,18 @@ import "../CSS/table.css";
 export default class HeaderSubtitle extends Component {
   render() {
     const currentStats = this.props.currentStats;
-    const unreadChange = currentStats && currentStats[1].unread - currentStats[0].unread
+    const lastUpdate = currentStats[1] ? `${((Date.now() - currentStats[1].date)/1000/60/60).toFixed(1)} hours ago` : `0.0 hours ago`
+    const unreadChange = currentStats[1] ? currentStats[0].unread - currentStats[1].unread : 0
     return (
       <div>
-        {currentStats[1] && 
+        {currentStats[0] && 
           <p style={{display: "block", margin: "1em 0 3em 0", textAlign: "center" }}>
-            You have {currentStats[1].unread} unread emails and {currentStats[1].total} inbox emails<br/>
+            You have {currentStats[0].total} emails total, {currentStats[0].unread} unread emails, and<br/>
             {unreadChange < 0 ? 
-              `There are ${Math.abs(unreadChange)} fewer unread emails since the last update!` : 
+              `${Math.abs(unreadChange)} fewer unread emails since the last update ${lastUpdate}!` : 
               unreadChange === 0 ? 
-                `There is no change in the number of unread emails since the last update` : 
-                `There are ${Math.abs(unreadChange)} more unread emails than the last update`
+                `no change in unread emails since the last update ${lastUpdate}` : 
+                `${Math.abs(unreadChange)} more unread emails than the last update ${lastUpdate}`
             }
           </p>
         }

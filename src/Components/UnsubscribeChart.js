@@ -56,7 +56,7 @@ export default class UnsubscribeChart extends Component {
             }),
             datasets: [
               {
-                label: "Emails with Unsubscribe",
+                label: "Contains \"Unsubscribe\"",
                 data: this.state.data.map((obj) => {
                   return obj.unsubscribe;
                 }),
@@ -65,7 +65,7 @@ export default class UnsubscribeChart extends Component {
                 fill: "origin",
               },
               {
-                label: "Total Emails",
+                label: "Emails Received",
                 data: this.state.data.map((obj) => {
                   return obj.total;
                 }),

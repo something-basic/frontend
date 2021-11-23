@@ -57,7 +57,7 @@ export default class DailyChart extends Component {
 
             datasets: [
               {
-                label: "Unread Emails",
+                label: "Unread",
                 data: this.state.data.map((obj) => {
                   return obj.unread;
                 }),
@@ -66,7 +66,7 @@ export default class DailyChart extends Component {
                 fill: "origin",
               },
               {
-                label: "Total Emails",
+                label: "Emails Received",
                 data: this.state.data.map((obj) => {
                   return obj.total;
                 }),
@@ -85,6 +85,12 @@ export default class DailyChart extends Component {
             legend: {
               display: true,
               position: "bottom",
+            },
+            plugins: {
+              subtitle: {
+                display: true,
+                text: "The counts in this chart excludes emails with the word \"unsubscribe\""
+              }
             },
             scales: {
               x: {
