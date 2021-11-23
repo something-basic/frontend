@@ -53,7 +53,7 @@ export default class App extends Component {
             <Route path="/about">
               <About />
             </Route>
-            <Route exact path="/">
+            <Route path="/*">
               <Home accessToken={this.state.accessToken} handleLogin={this.handleLogin}/>
             </Route>
         </Switch>
