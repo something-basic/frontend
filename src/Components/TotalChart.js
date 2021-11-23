@@ -23,12 +23,24 @@ export default class TotalChart extends Component {
     const data = await axios(config);
     const sortedData = data.data.sort((a,b) => a.date - b.date );
     this.setState({ rawData: sortedData });
-    this.filterData(10)
+    this.filterData(10);
     this.props.getCurrentStats(sortedData.slice(-2));
   };
 
+  postTotal = async () => {
+    const jwt = this.props.accessToken;
+    const config = {
+      headers: { Authorization: `Bearer ${jwt}` },
+      method: "post",
+      baseURL: process.env.REACT_APP_SERVER_URL,
+      url: "/total",
+    };
+    const data = await axios(config);
+    console.log(data.data)
+  }
+
   filterData = (value) => {
-    const filteredData = this.state.rawData
+    const filteredData = this.state.rawData;
     this.setState({data: filteredData.slice(-value)});
   };
 
@@ -36,8 +48,13 @@ export default class TotalChart extends Component {
     this.filterData(e.target.value)
   };
 
+  getAndUpdateTotal = async () => {
+    await this.postTotal(); // Update
+    await this.getTotal(); // Post-updated get to show current data
+  }
+
   componentDidMount() {
-    this.getTotal();
+    this.getAndUpdateTotal();
   };
 
   render() {
@@ -56,7 +73,7 @@ export default class TotalChart extends Component {
           <Line 
             data={{
               labels: this.state.data.map((obj) => {
-                return dayjs(obj.date).format("MMM DD, YYYY");
+                return dayjs(obj.date).format("MMM DD, YYYY HH:mm");
               }),
               datasets: [
                 {
@@ -65,7 +82,8 @@ export default class TotalChart extends Component {
                     return obj.unread;
                   }),
                   backgroundColor: ['#34adfe'],
-                  pointBackgroundColor: ['#ffea00'],
+                  pointBackgroundColor: ['#34adfe'],
+                  hoverBackgroundColor:["#ffea00"],
                   fill: "origin",
                 },
                 {
@@ -74,7 +92,8 @@ export default class TotalChart extends Component {
                     return obj.total;
                   }),
                   backgroundColor: ["#93d8ff"],
-                  pointBackgroundColor: ['#ffea00'],
+                  pointBackgroundColor: ['#93d8ff'],
+                  hoverBackgroundColor:["#ffea00"],
                   fill: "origin",
                 },
               ],
@@ -93,7 +112,7 @@ export default class TotalChart extends Component {
               },
               elements: {
                 point: {
-                    radius: 0
+                    radius: 3
                 },
                 line: {
                     tension: 0
