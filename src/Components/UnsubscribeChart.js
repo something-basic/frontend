@@ -25,8 +25,12 @@ export default class UnsubscribeChart extends Component {
         binOption: binOption,
       },
     };
-    const data = await axios(config);
-    this.setState({ data: data.data.reverse() });
+    try {
+      const data = await axios(config);
+      this.setState({ data: data.data.reverse() });
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   handleChange = (e) => {
