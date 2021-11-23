@@ -45,19 +45,19 @@ export default class App extends Component {
           handleLogin={this.handleLogin}
           handleLogout={this.handleLogout}
         />
+        <Container>
         <Switch>
-          <Container>
-            <Route exact path="/">
-              <Home accessToken={this.state.accessToken} handleLogin={this.handleLogin}/>
-            </Route>
             <Route path="/dashboard">
               <Dashboard userName={this.state.userName} accessToken={this.state.accessToken}/>
             </Route>
             <Route path="/about">
               <About />
             </Route>
-          </Container>
+            <Route exact path="/">
+              <Home accessToken={this.state.accessToken} handleLogin={this.handleLogin}/>
+            </Route>
         </Switch>
+        </Container>
         <Footer />
       </Router>
     );

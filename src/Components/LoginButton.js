@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { GoogleLogin } from "react-google-login";
 
 export default class LoginButton extends Component {
+  
   responseGoogle = async (response) => {
     this.props.handleLogin(response);
   };
+
   render() {
     return (
       <GoogleLogin

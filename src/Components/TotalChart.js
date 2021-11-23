@@ -24,7 +24,7 @@ export default class TotalChart extends Component {
     const sortedData = data.data.sort((a,b) => a.date - b.date );
     this.setState({ rawData: sortedData });
     this.filterData(10);
-    this.props.getCurrentStats(sortedData.slice(-2));
+    this.props.getCurrentStats(sortedData.slice(-2).reverse());
   };
 
   postTotal = async () => {
@@ -35,8 +35,7 @@ export default class TotalChart extends Component {
       baseURL: process.env.REACT_APP_SERVER_URL,
       url: "/total",
     };
-    const data = await axios(config);
-    console.log(data.data)
+    await axios(config);
   }
 
   filterData = (value) => {
@@ -49,8 +48,8 @@ export default class TotalChart extends Component {
   };
 
   getAndUpdateTotal = async () => {
-    await this.postTotal(); // Update
-    await this.getTotal(); // Post-updated get to show current data
+    await this.postTotal(); // Update first (it's quick)
+    await this.getTotal(); // Then show results
   }
 
   componentDidMount() {
@@ -63,10 +62,10 @@ export default class TotalChart extends Component {
         <div style={{ display: "block", margin: "0 0 1em 0" }}>
           <h4 style={{ display: "inline-block", margin: "0 0 0 0"}}>Logged History</h4>
           <Form.Select size="sm" style={{ display: "inline-block", width: "12em", float: "right"}} onChange={(value) => this.handleChange(value)} id="binSelection">
-            <option value="10" defaultValue>Last 10 Requests</option>
-            <option value="50">Last 50 Requests</option>
+            <option value="50" defaultValue>Last 50 Requests</option>
             <option value="200">Last 200 Requests</option>
             <option value="1000">Last 1000 Requests</option>
+            <option value="5000">Last 5000 Requests</option>
           </Form.Select>
         </div>
         {this.state.data && (
@@ -77,7 +76,7 @@ export default class TotalChart extends Component {
               }),
               datasets: [
                 {
-                  label: "Unread Emails",
+                  label: "Unread",
                   data: this.state.data.map((obj) => {
                     return obj.unread;
                   }),
@@ -87,7 +86,7 @@ export default class TotalChart extends Component {
                   fill: "origin",
                 },
                 {
-                  label: "Total Emails",
+                  label: "Inbox Size",
                   data: this.state.data.map((obj) => {
                     return obj.total;
                   }),
@@ -109,6 +108,12 @@ export default class TotalChart extends Component {
               legend: {
                 display: true,
                 position: "bottom",
+              },
+              plugins: {
+                subtitle: {
+                  display: true,
+                  text: "The counts in this chart includes all inbox emails"
+                }
               },
               elements: {
                 point: {

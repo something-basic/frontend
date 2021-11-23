@@ -25,12 +25,8 @@ export default class UnsubscribeChart extends Component {
         binOption: binOption,
       },
     };
-    try {
-      const data = await axios(config);
-      this.setState({ data: data.data.reverse() });
-    } catch (e) {
-      console.log(e);
-    }
+    const data = await axios(config);
+    this.setState({ data: data.data.reverse() });
   };
 
   handleChange = (e) => {
@@ -60,7 +56,7 @@ export default class UnsubscribeChart extends Component {
             }),
             datasets: [
               {
-                label: "Emails with Unsubscribe",
+                label: "Contains \"Unsubscribe\"",
                 data: this.state.data.map((obj) => {
                   return obj.unsubscribe;
                 }),
@@ -69,7 +65,7 @@ export default class UnsubscribeChart extends Component {
                 fill: "origin",
               },
               {
-                label: "Total Emails",
+                label: "Emails Received",
                 data: this.state.data.map((obj) => {
                   return obj.total;
                 }),
