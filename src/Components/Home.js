@@ -15,9 +15,9 @@ export default class Home extends Component {
     return (
     <>
       <div id="main">
-        <Container style={{padding: "9em"}}>
-          <div style={{padding: "3em 4em", margin: "0em auto 0em auto", width: "max-content", dispaly: "block",  backdropFilter: "blur(0.3em)", backgroundColor: "rgba(70,70,70,0.03)"}}>
-            <h1 style={{margin: "0", padding: "0"}}>MailPal</h1>
+        <Container style={{padding: "6.5em"}}>
+          <div style={{padding: "3em 4em", margin: "0em auto 0em auto", width: "fit-content", dispaly: "block",  backdropFilter: "blur(0.3em)", backgroundColor: "rgba(250,250,250,0.5)"}}>
+            <h1 style={{fontSize: "5em", margin: "0", padding: "0"}}>MailPal</h1>
             <p>Providing analytical insights into your email habits</p>
             <GoogleLogin
               clientId={`${process.env.REACT_APP_AUTH_DOMAIN}`}
